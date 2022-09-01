@@ -1,38 +1,63 @@
-.container {
-    display: inline-grid;
-    background-color: lightblue;
-    grid-template: 40px 40px 40px 40px 40px / 
-    40px 40px 40px 40px 40px;
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    display: grid;
+    grid-template: repeat(2, 110px) 550px 110px / 468px 1400px; 
     grid-template-areas:
-        "living-room living-room living-room living-room living-room"
-        "living-room living-room living-room living-room living-room"
-        "bedroom bedroom bathroom kitchen kitchen"
-        "bedroom bedroom bathroom kitchen kitchen"
-        "closet closet . . .";
-}
-
-.room {
-    border: 1px solid;
-    font-size: 50%;
+        "header header"
+        "sidebar nav"
+        "sidebar article"
+        "footer footer";
+    gap: 15px;
     text-align: center;
-}
-
-#kitchen {
-    grid-area: kitchen;
-}
-
-#living-room {
-    grid-area: living-room;
-}
-
-#bathroom {
-    grid-area: bathroom;
-}
-
-#bedroom {
-    grid-area: bedroom;
-}
-
-#closet {
-    grid-area: closet;
-}
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+  
+  .container div {
+    padding: 15px;
+    font-size: 32px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: white;
+    border-radius: 15px;
+  }
+  
+  .header {
+    grid-area: header;
+    background-color: #FFDE22;
+  }
+  
+  .sidebar {
+    background-color: #FF7755;
+    grid-area: sidebar;
+  }
+  
+  .nav {
+    background-color: #00DDFF;
+    grid-area: nav;
+  }
+  
+  .article {
+    display: grid;
+    grid-template-columns: subgrid;
+    background-color: #bccbde;
+    grid-area: article;
+  }
+  
+  .article p {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: white;
+    text-align: left;
+  }
+  
+  .footer {
+    background-color: #393f4d;
+    grid-area: footer;
+  }
+  
